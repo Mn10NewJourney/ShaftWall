@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25100\viewh14200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\b\fs32 \cf0 Shaft Wall Creator - Instructions
+\b0\fs24 \
+------------------------------------------------------------------------------------------------------------------------------------------------------------\
+
+\b\fs28 Include scripts code:
+\b0\fs24 \
+<Include Shaft Wall Creator/Scripts/r1_script.txt>\
+------------------------------------------------------------------------------------------------------------------------------------------------------------\
+
+\b\fs28 Code:
+\b0\fs24 \
+CreateShaftWall(FrontTexture, LeftTexture, RightTexture, BackTexture, TopTexture, BottomTexture, Thickness, CenterX, CenterZ, DimensionX, DimensionZ, Number, Height, Offset, ShowFrontSide, ShowLeftSide, ShowRightSide, ShowBackSide, ShowTop, ShowBottom, IsExternal)\
+------------------------------------------------------------------------------------------------------------------------------------------------------------\
+
+\b\fs28 Parameters:
+\b0\fs24 \
+
+\b\fs26 Textures:
+\b0\fs24 \
+1. \ul FrontTexture\ulnone , \ul LeftTexture\ulnone , \ul RightTexture\ulnone  and \ul BackTexture\ulnone  are the textures for the four sides of the shaft walls.\
+2. \ul TopTexture\ulnone  and \ul BottomTexture\ulnone  are the textures for the top and bottom sides of the shaft walls.\
+\
+
+\b\fs26 Position & Size:
+\b0\fs24 \
+3. \ul Thickness\ulnone  is the thickness of the shaft walls.\
+4. \ul CenterX\ulnone  and \ul CenterZ\ulnone  are the center point of the shaft walls.\
+5. \ul DimensionX\ulnone  and \ul DimensionZ\ulnone  is the 
+\b half width
+\b0  of the shaft walls. For example, if you want the shaft wall to be 10 feet long in the X-axis (Left-right) and 20 feet long in the Z-axis (Front-back), set the DimensionX parameter to 5 and set the DimensionZ parameter to 10.\
+6. \ul Number\ulnone  is the number or the name of the set of the shaft walls. This does not have to be the same as the corresponding shaft/stairwell number.\
+7. \ul Height\ulnone  is the height of the shaft walls.\
+8. \ul Offset\ulnone  is the offset of the shaft walls.\
+\
+
+\b\fs26 Misc:
+\b0\fs24 \
+9. \ul ShowFrontSide\ulnone , \ul ShowLeftSide\ulnone , \ul ShowRightSide\ulnone  and \ul ShowBackSide\ulnone  is to specify whether to show all the four sides or only some sides of the shaft walls.\
+10. \ul ShowTop\ulnone  and \ul ShowBottom\ulnone  is to specify whether to show top and bottom sides of the shaft walls or not. This is useful if you are creating shaft tops on the roof level.\
+------------------------------------------------------------------------------------------------------------------------------------------------------------\
+
+\b\fs28 Example\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\b0\fs24 \cf0 CreateShaftWall(Road, Sidewalk, Brass2, StainlessSteel3, Downtown, Scanner, 0.33, -15, -100, 5, 10, 1, %height%, 4, true, true, true, true, true, true, false)}

@@ -1,0 +1,46 @@
+#Shaft Wall Creator
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+<Function CreateShaftWall>
+	Set 795 = %param1% #Front Texture
+	Set 796 = %param2% #Left Texture
+	Set 797 = %param3% #Right Texture
+	Set 798 = %param4% #Back Texture
+	Set 798A = %param5% #Top Texture
+	Set 798B = %param6% #Bottom Texture
+	Set 799 = %param7% #Thickness
+	Set 800 = %param8% #Center X
+	Set 801 = %param9% #Center Z
+	Set 802 = %param10% #Dimension X
+	Set 803 = %param11% #Dimension Z
+	Set 804 = %param12% #Number
+	Set 805 = %param13% #Height
+	Set 806 = %param14% #Offset
+	Set 807 = %param15% #Show Front Side
+	Set 808 = %param16% #Show Left Side
+	Set 809 = %param17% #Show Right Side
+	Set 810 = %param18% #Show Back Side
+	Set 811 = %param19% #Show Top
+	Set 812 = %param20% #Show Bottom
+	Set 813 = %param21% #Is External
+	
+	WallOrientation = Left
+	DrawWalls = true, false, false, false, false, false
+	if[%807% ! false & %807% ! False] AddWall SWall(%804%)Front, %795%, %799%, %800% - %802%, %801% - %803%, %800% + %802%, %801% - %803%, %805%, %805%, %806%, %806%, 0, 0, %813%
+	if[%808% ! false & %808% ! False] AddWall SWall(%804%)Left, %796%, %799%, %800% - %802%, %801% - %803%, %800% - %802%, %801% + %803%, %805%, %805%, %806%, %806%, 0, 0, %813%
+	WallOrientation = Right
+	DrawWalls = false, true, false, false, false, false
+	if[%809% ! false & %809% ! False] AddWall SWall(%804%)Right, %797%, %799%, %800% + %802%, %801% - %803%, %800% + %802%, %801% + %803%, %805%, %805%, %806%, %806%, 0, 0, %813%
+	if[%810% ! false & %810% ! False] AddWall SWall(%804%)Back, %798%, %799%, %800% - %802%, %801% + %803%, %800% + %802%, %801% + %803%, %805%, %805%, %806%, %806%, 0, 0, %813%
+
+	FloorOrientation = Top
+	DrawWalls = false, true, false, false, false, false
+	if[%811% ! false & %811% ! False] AddFloor SWall(%804%)Top, %798A%, %799%, %800% - %802%, %801% - %803%, %800% + %802%, %801% + %803%, %806% + %805%, %806% + %805%, 0, 0, %813%
+	FloorOrientation = Bottom
+	DrawWalls = true, false, false, false, false, false
+	if[%812% ! false & %812% ! False] AddFloor SWall(%804%)Bottom, %798B%, %799%, %800% - %802%, %801% - %803%, %800% + %802%, %801% + %803%, %806%, %806%, 0, 0, %813%
+	
+	#Reset All Parameters to Default
+	FloorOrientation = Top
+	WallOrientation = Center
+	DrawWalls = true, true, false, false, false, false
+<EndFunction>
